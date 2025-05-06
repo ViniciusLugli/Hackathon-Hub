@@ -3,6 +3,7 @@ import LandingPage from "./pages/LandingPage.jsx";
 import LoginPage from "./pages/LoginPage";
 import Hackathons from "./pages/Hackathons.jsx";
 import NetworkBackground from "./components/NetworkBackground.jsx";
+import Register from "./pages/Register.jsx";
 import "./assets/styles/style.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           {/* Defina as rotas aqui */}
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/hackathons" element={<Hackathons />} />
         </Routes>
       </Router>

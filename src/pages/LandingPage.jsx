@@ -4,17 +4,16 @@ export default function LandingPage() {
   return (
     <div className="content">
       <nav>
-        <Link className="login-button" to="/login">
-          Login
+        <Link className="sign-up-button" to="/login">
+          Sign Up
+        </Link>
+        <Link className="sign-in-button" to="/register">
+          Sign In
         </Link>
       </nav>
       <div className="container">
         <div className="header">
-          <img
-            className="logo"
-            src="../../public/logo-sem-texto.png"
-            alt="Hackathon Hub"
-          />
+          <img className="logo" src="/logo-sem-texto.png" alt="Hackathon Hub" />
           <div className="header-title">
             <h1 className="title">Hackathon</h1>
             <h1 className="title">

@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -9,14 +9,19 @@ export default function LoginPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // envia o formulário como POST
     axios
-      .post("/api/endpoint", { email, senha })
-      .then((res) => {
-        // redireciona para a página inicial
-        navigate("/", { replace: true });
+      .post("/api", { email, senha })
+      .then((response) => {
+        console.log("Success:", response.data);
+        navigate("/");
       })
-      .catch((err) => console.error(err));
+      .catch((error) => {
+        console.log("Error:", error);
+        // Se a resposta de erro tiver uma resposta com o corpo
+        if (error.response) {
+          console.log("Response Error:", error.response.data);
+        }
+      });
   };
 
   return (
